@@ -36,8 +36,6 @@
 .left {
     background-color: var(--primary-color) !important;
     box-shadow: 0 0 8px black;
-    /* width: 18%; */
-    /* width: 20rem; */
     transition: 0.6s ease;
     flex: 0 0 18%;
 }
