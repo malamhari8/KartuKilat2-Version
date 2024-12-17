@@ -1,0 +1,374 @@
+@import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --primary-color: #423956;
+    --hover-primary-color: #8E7EB4;
+    --secondary-color: ;
+    --accent-color: ;
+}
+
+* {
+    font-family: "poppins", sans-serif;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    overflow: hidden;
+}
+
+.nav {
+    height: 13vh;
+    width: 100%;
+    background-color: var(--primary-color);
+    /* box-shadow: 7px 0 8px black; */
+}
+
+.nav h2 {
+    font-family: "cherry bomb one", sans-serif;
+    font-size: 1.5rem;
+}
+
+.left-right {
+    display: flex;
+    height: 87vh;
+}
+
+.left {
+    background-color: var(--primary-color) !important;
+    box-shadow: 0 0 8px black;
+    /* width: 18%; */
+    /* width: 20rem; */
+    transition: 0.6s ease;
+    flex: 0 0 18%;
+}
+
+/* menu toggle */
+.left.minimized {
+    /* width: 6%; */
+    flex: 0 0 7%;
+}
+
+.left-list .list .list-title {
+    transition: 0.4s;
+}
+
+.left-list .list .list-title.invisible {
+    opacity: 0;
+}
+
+/* menu toggle end */
+
+.menu-btn {
+    border-radius: 50%;
+}
+
+.menu-btn:hover {
+    background-color: #8E7EB4;
+}
+
+.left-list {
+    top: 30%;
+}
+
+.list:hover {
+    background-color: #8E7EB4;
+}
+
+
+/* ===== right menu start ===== */
+.right {
+    width: 100%;
+    flex: 1 1 auto;
+}
+
+.home,
+.folder {
+    height: 87vh;
+    /* width: 100%; */
+}
+
+.flash-menu {
+    /* width: 100%; */
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.flash-menu .header p span {
+    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    border-radius: 50%;
+    color: white;
+    background-color: var(--primary-color);
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: 0.6s;
+}
+
+.flash-menu .header p span:hover {
+    transform: rotate(180deg);
+}
+
+.home .add-flashcard {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    z-index: -9;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.home .add-flashcard.reveal {
+    z-index: 10;
+    opacity: 1;
+}
+
+.home .add-flashcard-wrapper {
+    position: relative;
+    background-color: var(--primary-color);
+    color: white;
+    height: 22rem;
+    width: 30rem;
+    padding: 4rem;
+}
+
+.home .add-flashcard-wrapper #close-flashcard-input {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2rem;
+    width: 2rem;
+    padding: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    border-radius: 50%;
+    color: var(--primary-color);
+    background-color: white;
+    top: 2rem;
+    right: 4rem;
+    transform: rotate(45deg);
+    cursor: pointer;
+}
+
+.home .add-flashcard-wrapper #submit {
+    background-color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: var(--primary-color);
+    padding: 0.3rem 1rem;
+}
+
+.flash-menu::after,
+.folder-menu::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 3rem;
+    bottom: -20px;
+    right: 0;
+    background: linear-gradient(to left, white, rgba(255, 255, 255, 0));
+}
+
+/* .flash-wrapper {} */
+
+.flash,
+.folder-home {
+    position: relative;
+    color: white;
+    flex: 0 0 20rem;
+    border-radius: 1rem;
+    background-color: var(--primary-color);
+    cursor: default;
+}
+
+.flash i {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.flash::after,
+.folder-home::after {
+    content: '';
+    position: absolute;
+    height: 0;
+    width: 100%;
+    border-radius: 0 0 1rem 1rem;
+    bottom: 0;
+    left: 0;
+    background-color: var(--hover-primary-color);
+}
+
+.flash:hover::after,
+.folder-home:hover::after {
+    height: 12px;
+}
+
+/* folder menu */
+.folder {
+    display: none;
+}
+
+.folder-list {
+    color: white;
+    height: 12rem;
+    width: 100%;
+    padding: 2rem;
+    margin: 1rem 0;
+    border-radius: 1rem;
+    background: var(--primary-color);
+}
+
+/* Flashcard click style */
+.flashcard {
+    background-color: white;
+}
+
+/* Flashcard slider */
+.flashcard-slider {
+    background-color: var(--primary-color);
+}
+
+/* .flashcard-slider.full {} */
+
+.carousel-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.carousel-item {
+    perspective: 1000px;
+}
+
+.card {
+    width: 240px;
+    height: 300px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    transform: translateX(-50%);
+}
+
+.card:focus {
+    transform: rotateY(180deg) translateX(50%);
+}
+
+.front,
+.back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    color: black;
+    text-align: center;
+    padding: 1rem;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.front {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.back {
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+}
+
+/* box nambahkan istilah baru */
+
+.add-term {
+    background-color: var(--primary-color);
+}
+
+.add-term input {
+    color: white;
+    outline: none;
+    border-bottom: 3px solid white;
+    background: transparent;
+    width: 100%;
+    font-weight: 300;
+}
+
+/* inner html nya, tambahkan kata baru..  */
+.add-term-box h2 span {
+    display: inline-block;
+    background: var(--primary-color);
+    padding: 0.4rem;
+    transition: 0.4s;
+}
+
+.add-term-box h2 span:hover {
+    transform: rotate(90deg);
+}
+
+/* Bagian full-flash */
+.full-flash {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.full-flash:hover {
+    background: var(--hover-primary-color);
+}
+
+.carousel-inner.full {
+    padding: 3.5rem;
+}
+
+.card.full {
+    width: 400px;
+    height: 340px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    transform: translateX(-50%);
+}
+
+.card.full:focus {
+    transform: rotateY(180deg) translateX(50%);
+}
+
+/* Full-flash end */
+
+.back-home {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.6rem;
+    width: 2.6rem;
+    padding: 0.3rem;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+#back-home:hover {
+    background-color: var(--hover-primary-color);
+}

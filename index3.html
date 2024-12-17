@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- tailwind css -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- bootstrap css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- boxicons icon -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <title>Kartu Kilat 3</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <nav class="nav text-white flex items-center px-14">
+            <a href="#">
+                <h2 class="h-max text-2xl">KartuKilat</h2>
+            </a>
+        </nav>
+
+        <div class="left-right">
+            <div class="left h-screen relative z-50" id="left">
+                <i class='menu-btn bx bx-menu h-10 w-10 float-end my-6 text-3xl text-white cursor-pointer mr-6 flex justify-center items-center'
+                    id="menu"></i>
+
+                <div class="left-list text-white absolute w-full" id="left-list">
+                    <div id="home-btn" class="list mx-4 m-3 h-12 rounded-lg cursor-pointer flex items-center">
+                        <i class='bx bx-home mx-3'></i>
+                        <h3 class="list-title">Home</h3>
+                    </div>
+
+                    <div id="folder-btn" class="list mx-4 m-3 h-12 rounded-lg cursor-pointer flex items-center">
+                        <i class='bx bx-folder mx-3'></i>
+                        <h3 class="list-title">Folder</h3>
+                    </div>
+
+                    <div id="setting-btn" class="list mx-4 m-3 h-12 rounded-lg cursor-pointer flex items-center">
+                        <i class='bx bx-cog mx-3'></i>
+                        <h3 class="list-title">Pengaturan</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right overflow-y-auto relative" id="right">
+
+                <div class="home px-12 py-8" id="home">
+
+                    <div class="add-flashcard" id="add-flashcard-input">
+                        <div class="add-flashcard-wrapper rounded-lg">
+                            <span class="rounded-full" id="close-flashcard-input">+</span>
+                            <div class="mb-6">
+                                <p class="mb-2">Judul</p>
+                                <input type="text" class="w-full h-10 rounded text-black px-5" id="title">
+                            </div>
+                            <div class="">
+                                <p class="mb-2">Deskripsi Singkat</p>
+                                <input type="text" class="w-full h-10 rounded text-black px-5" id="description">
+                            </div>
+
+                            <button class="float-end mt-8" id="submit">Submit</button>
+                        </div>
+                    </div>
+
+                    <div class="flash-menu h-52 mb-8">
+                        <div class="header flex items-center justify-between mb-3">
+                            <h2 class="text-2xl font-semibold ">Flashcard kamu</h2>
+                            <p class="h-full mr-20 flex items-center font-semibold">Tambahkan Flashcard baru <span
+                                    class="ml-5" id="new-flashcard">+</span></p>
+                        </div>
+
+                        <div class="flash-wrapper h-44 flex flex-nowrap overflow-x-auto" id="flash-wrapper"
+                            data-pair-id="12345">
+
+                            <div class="flash h-full mr-8 p-8 " data-pair-id="12345">
+                                <h4 class="font-semibold text-xl mb-2" data-title="123">Vocubalary english</h4>
+                                <p class="font-medium" data-description="123">1 Istilah</p>
+                                <i class='bx bx-x pointer absolute bottom-6 end-10 rounded-full bg-white p-2 cursor-default bg-white font-semibold' data-pair-id="10"></i>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <div class="folder-menu relative h-52">
+                        <div class="header flex items-center justify-between mb-3">
+                            <h2 class="text-2xl font-semibold ">Folder kamu</h2>
+                        </div>
+
+                        <div class="flash-wrapper h-44 flex flex-nowrap overflow-x-auto">
+                            <div class="folder-home h-full mr-8 p-8">
+                                <h4 class="font-semibold text-xl mb-2">Mesede Folder</h4>
+                                <p class="font-medium">10 Istilah</p>
+                            </div>
+
+                            <div class="folder-home h-full mr-8 p-8">
+                                <h4 class="font-semibold text-xl mb-2">Wadidau folder</h4>
+                                <p class="font-medium">10 Istilah</p>
+                            </div>
+
+                            <div class="folder-home h-full mr-8 p-8">
+                                <h4 class="font-semibold text-xl mb-2">Rak prikitiw</h4>
+                                <p class="font-medium">10 Istilah</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="flashcard inset-0 opacity-1 z-10 absolute py-10 hidden" data-pair-id="12345">
+                        <i class='back-home bx bx-arrow-back rounded-full text-2xl cursor-pointer ml-12'></i>
+                        <div class="flashcard-wrapper w-4/5 m-auto pb-8">
+                            <div class="flashcard-slider carousel slide rounded-lg mb-8">
+                                <i
+                                    class='full-flash bx bx-fullscreen text-white text-3xl absolute z-10 cursor-pointer right-14 top-6 rounded-full h-14 w-14 text-center p-2'></i>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <div class="card" tabindex="0">
+                                            <div class="front">
+
+                                            </div>
+                                            <div class="back">
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target=".flashcard-slider"
+                                    data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target=".flashcard-slider"
+                                    data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+
+                            <div class="explanation w-75 mb-8">
+                                <h1 class="text-2xl font-bold mb-1" data-flashcard-title="123">Vocubalary English</h1>
+                                <p class="text-sm" data-flashcard-description="123">Kosa kata yang paling banyak di
+                                    temukan ketika kita belajar
+                                    pengembagan
+                                    website.
+                                    Pengulangan kata nya juga banyak disini</p>
+                            </div>
+
+                            <div class="add-term-wrapper">
+                                <h1 class="text-xl font-bold mb-1">Tambahkan Istilah/Kata baru</h1>
+
+                                <div class="add-term p-2 py-4 rounded mb-4">
+                                    <div class="nav-add-term flex align-center
+                                    justify-between mb-3">
+                                        <div
+                                            class="no-sequence rounded-full bg-white h-8 w-8 ml-7 flex align-center justify-center font-bold p-1">
+                                            1</div>
+                                        <i
+                                            class='bx bx-trash-alt mr-7 text-2xl text-white font-thin cursor-pointer'></i>
+                                    </div>
+
+                                    <div class="add-term-content flex align-center justify-between gap-16">
+                                        <div class="ml-8 w-1/2">
+                                            <div class="text-white font-bold tracking-wide">Kata/Istilah</div>
+                                            <input type="text text-black" class="input-term">
+                                        </div>
+
+                                        <div class="mr-8 w-1/2">
+                                            <div class="text-white font-bold tracking-wide">Deskripsi</div>
+                                            <input type="text-black" class="input-explanation">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="add-term-box text-center">
+                                    <h2 class="font-bold text-lg">Tambahkan kata baru <span
+                                            class="add-flash ml-4 inline-block rounded-full text-white cursor-pointer font-medium h-10 w-10 text-xl">+</span>
+                                    </h2>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="folder px-12 py-8 overflow-y-scroll" id="folder">
+                    <div class="folder-container w-full">
+                        <h2 class="text-2xl font-semibold mb-2">Folder Kamu</h2>
+
+                        <div class="folder-list">
+                            <h4>Mesede</h4>
+                            <p>4 Flashcard</p>
+                        </div>
+
+                        <div class="folder-list">
+                            <h4>Mesede</h4>
+                            <p>4 Flashcard</p>
+                        </div>
+
+                        <div class="folder-list">
+                            <h4>Mesede</h4>
+                            <p>4 Flashcard</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+    <!-- bootstrap script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
